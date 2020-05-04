@@ -5,7 +5,9 @@
   "private": true,
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --config config/webpack.dev.js",
-    "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js"
+    "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js",
+    "clean": "del-cli dist",
+    "clean:deps": "del-cli node_modules"
   },
   "license": "MIT",
   "devDependencies": {
@@ -17,6 +19,7 @@
     "copy-webpack-plugin": "^5.1.1",
     "cross-env": "^7.0.2",
     "css-loader": "^3.5.3",
+    "del-cli": "^3.0.0",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.3.0",
     "mini-css-extract-plugin": "^0.9.0",
