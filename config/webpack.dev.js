@@ -14,7 +14,13 @@ module.exports = merge(common, {
     open: true,
     compress: true,
     hot: true,
+    overlay: {
+      warnings: true,
+      errors: true,
+    },
     port: 1234,
+    host: '0.0.0.0',
+    useLocalIp: true,
   },
 
   plugins: [new webpack.HotModuleReplacementPlugin()],
