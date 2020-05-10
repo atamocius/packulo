@@ -19,8 +19,6 @@ module.exports = merge(common, {
       errors: true,
     },
     port: 1234,
-    host: '0.0.0.0',
-    useLocalIp: true,
   },
 
   plugins: [new webpack.HotModuleReplacementPlugin()],
