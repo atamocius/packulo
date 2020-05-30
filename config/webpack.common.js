@@ -21,13 +21,22 @@ module.exports = {
 
   plugins: [
     new CleanWebpackPlugin(),
-    new CopyPlugin([
-      {
-        from: paths.static,
-        to: 'static',
-        ignore: ['*.DS_Store', 'index.html', 'favicon.+(ico|png|gif)'],
-      },
-    ]),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: paths.static,
+          to: 'static',
+          globOptions: {
+            ignore: [
+              '**/*.DS_Store',
+              '**/index.html',
+              '**/favicon.+(ico|png|gif)',
+            ],
+          },
+          noErrorOnMissing: true,
+        },
+      ],
+    }),
     new HtmlWebpackPlugin({
       favicon: paths.static + '/' + template.favicon,
       template: paths.static + '/index.html',
