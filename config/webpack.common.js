@@ -9,12 +9,6 @@ module.exports = {
 
   context: paths.src,
 
-  output: {
-    path: paths.build,
-    filename: '[name].bundle.js',
-    publicPath: '/',
-  },
-
   resolve: {
     plugins: [new ResolveShortPathPlugin({ rootPath: paths.src })],
   },
