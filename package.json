@@ -7,7 +7,22 @@
     "start": "cross-env NODE_ENV=development webpack-dev-server --config config/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js",
     "clean": "del-cli dist",
-    "clean:deps": "del-cli node_modules"
+    "clean:deps": "del-cli node_modules",
+    "pack": "npm run build && electron-builder --dir",
+    "bin": "npm run build && electron-builder"
+  },
+  "main": "src/main/main.js",
+  "build": {
+    "appId": "com.atamocius.packulo",
+    "productName": "packulo",
+    "files": [
+      "src/main/**/*",
+      "dist/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets",
+      "output": "bin"
+    }
   },
   "license": "MIT",
   "dependencies": {
