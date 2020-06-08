@@ -1,9 +1,13 @@
 import '~index.css';
 
-import { HelloWorld } from '~js/HelloWorld';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-const greeting = document.createElement('h1');
-greeting.textContent = HelloWorld();
+import App from '~App';
 
-const app = document.querySelector('#root');
-app.append(greeting);
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
