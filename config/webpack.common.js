@@ -11,12 +11,6 @@ module.exports = {
 
   target: 'electron-renderer',
 
-  output: {
-    path: paths.build,
-    filename: '[name].bundle.js',
-    publicPath: '/',
-  },
-
   resolve: {
     plugins: [new ResolveShortPathPlugin({ rootPath: paths.rendererSrc })],
   },
