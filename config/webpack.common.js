@@ -5,9 +5,11 @@ const ResolveShortPathPlugin = require('webpack-resolve-short-path-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: [paths.src + '/index.js'],
+  entry: [paths.rendererSrc + '/index.js'],
 
-  context: paths.src,
+  context: paths.rendererSrc,
+
+  target: 'electron-renderer',
 
   output: {
     path: paths.build,
@@ -16,7 +18,7 @@ module.exports = {
   },
 
   resolve: {
-    plugins: [new ResolveShortPathPlugin({ rootPath: paths.src })],
+    plugins: [new ResolveShortPathPlugin({ rootPath: paths.rendererSrc })],
   },
 
   plugins: [
