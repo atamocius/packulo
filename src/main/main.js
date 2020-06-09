@@ -2,7 +2,8 @@
 
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
-const isDev = require('electron-is-dev');
+
+const isDev = process.env.NODE_ENV === 'development';
 
 // Add React devtools extension for development
 let installExt;
