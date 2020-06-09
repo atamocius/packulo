@@ -2,7 +2,6 @@ const { paths } = require('./constants');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
-const { spawn } = require('child_process');
 
 module.exports = merge(common, {
   mode: 'development',
@@ -27,15 +26,6 @@ module.exports = merge(common, {
     },
     port: 1234,
     stats: 'errors-only',
-    before() {
-      spawn('electron', ['./src/main/main.js'], {
-        shell: true,
-        env: process.env,
-        stdio: 'inherit',
-      })
-        .on('close', code => process.exit(0))
-        .on('error', spawnError => console.error(spawnError));
-    },
   },
 
   plugins: [new webpack.HotModuleReplacementPlugin()],

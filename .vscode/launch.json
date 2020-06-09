@@ -5,15 +5,49 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Dev Server",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/webpack-dev-server/bin/webpack-dev-server",
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "args": ["--config=config/webpack.dev.js"]
+    },
+    {
+      "name": "Electron Main",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
+      "windows": {
+        "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd"
+      },
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "runtimeArgs": [
+        "${workspaceRoot}/src/main/main.js",
+        "--remote-debugging-port=9223",
+        "--enable-precise-memory-info"
+      ],
+      "protocol": "inspector"
+    },
+    {
+      "name": "Electron Renderer",
       "type": "chrome",
       "request": "attach",
-      "port": 9222,
-      "name": "Attach to Chrome",
+      "port": 9223,
       "url": "http://localhost:1234",
-      "webRoot": "${workspaceRoot}/src",
+      "webRoot": "${workspaceRoot}/src/renderer",
       "sourceMapPathOverrides": {
-        "webpack:///src/*": "${webRoot}/*"
+        "webpack:///*": "${webRoot}/*"
       }
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Electron",
+      "configurations": ["Dev Server", "Electron Main", "Electron Renderer"]
     }
   ]
 }
