@@ -11,17 +11,21 @@
     "pack": "npm run build && electron-builder --dir",
     "bin": "npm run build && electron-builder"
   },
-  "main": "src/main/main.js",
+  "main": "dist/backend/main.js",
   "build": {
     "appId": "com.atamocius.packulo",
     "productName": "packulo",
     "files": [
-      "src/main/**/*",
       "dist/**/*"
     ],
     "directories": {
       "buildResources": "assets",
       "output": "bin"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "runAfterFinish": true
     }
   },
   "license": "MIT",
