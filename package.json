@@ -8,8 +8,9 @@
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js",
     "clean": "del-cli dist",
     "clean:deps": "del-cli node_modules",
-    "pack": "npm run build && electron-builder --dir",
-    "bin": "npm run build && electron-builder"
+    "clean:bin": "del-cli bin",
+    "pack": "del-cli bin && npm run build && electron-builder --dir",
+    "bin": "del-cli bin && npm run build && electron-builder"
   },
   "main": "dist/backend/main.js",
   "build": {
