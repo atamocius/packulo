@@ -60,6 +60,13 @@ module.exports = {
           name: '[name].[contenthash].[ext]',
         },
       },
+      {
+        test: /\.woff2?(\?v=\d+\.\d+\.\d+)?$/i,
+        loader: 'file-loader',
+        options: {
+          name: 'fonts/[name].[contenthash].[ext]',
+        },
+      },
     ],
   },
 };

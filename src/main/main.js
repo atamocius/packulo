@@ -51,7 +51,7 @@ async function createWindow() {
     },
   });
 
-  await win.loadURL(
+  win.loadURL(
     isDev
       ? 'http://localhost:1234'
       : `file://${path.join(__dirname, '../../dist/index.html')}`

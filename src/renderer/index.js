@@ -1,3 +1,4 @@
+import '~assets/fonts/amble.css';
 import '~index.scss';
 
 import React from 'react';

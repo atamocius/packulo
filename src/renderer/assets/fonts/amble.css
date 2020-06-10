@@ -1,0 +1,55 @@
+@font-face {
+  font-family: "Amble";
+  font-weight: 300;
+  font-style: normal;
+  src: url("Amble-Light-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Amble";
+  font-weight: 300;
+  font-style: italic;
+  src: url("Amble-LightItalic-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Amble";
+  font-weight: 400;
+  font-style: normal;
+  src: url("Amble-Regular-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Amble";
+  font-weight: 400;
+  font-style: italic;
+  src: url("Amble-Italic-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Amble";
+  font-weight: 700;
+  font-style: normal;
+  src: url("Amble-Bold-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Amble";
+  font-weight: 700;
+  font-style: italic;
+  src: url("Amble-BoldItalic-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Amble Condensed";
+  font-weight: 300;
+  font-style: normal;
+  src: url("Amble-LightCondensed-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Amble Condensed";
+  font-weight: 300;
+  font-style: italic;
+  src: url("Amble-LightCondensedItalic-webfont.woff") format("woff");
+}
