@@ -7,7 +7,7 @@
     "start": "cross-env NODE_ENV=development webpack-dev-server --config config/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js",
     "clean": "del-cli dist",
-    "clean:deps": "del-cli node_modules"
+    "clean-deps": "del-cli node_modules"
   },
   "license": "MIT",
   "dependencies": {
