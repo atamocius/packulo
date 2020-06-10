@@ -1,4 +1,4 @@
-import '../node_modules/normalize.css/normalize.css';
+import '../../node_modules/normalize.css/normalize.css';
 import '~assets/fonts/amble.css';
 import '~index.scss';
 
